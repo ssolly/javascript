@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js day01 ex02</title>
+</head>
+<body>
+	<!-- css와 다르게 js는 body사이에 넣어도 된다 -->
+	<script type="text/javascript">
+		
+		var x=5
+		var y="5"
+		
+		/* javascript에서는 비교할 떄 굳이 equals를 사용하지 않아도 된다 
+		   등호가 2개일 때는 type을 보지 않는다						*/
+		document.write("x==y : " + (x==y) +"<br>")
+		document.write("x!=y : " + (x!=y) + "<br>")
+		
+		/* 등호가 3개일 때는 type과 동시에 값을 본다 */
+		document.write("x===y : " + (x===y) +"<br>")
+		document.write("x!==y : " + (x!==y) + "<br>")
+		document.write("<hr>")
+		
+		
+		var gender="M"
+		var age=21
+		if(gender=="M") {
+			if(age>=19) {
+				var result="남자 성인 입니다"
+			} else {
+				var result="남자 미성년자 입니다"
+			}
+		} else {
+			var result="여성 입니다"
+		}
+		document.write(result+"<br><hr>")
+
+		
+		var day
+		var week=new Date().getDay(); //0(일요일)~6(토요일)
+		switch(week) {
+			case 0 : day="일요일"; break;
+			case 1 : day="월요일"; break;
+			case 2 : day="화요일"; break;
+			case 3 : day="수요일"; break;
+			case 4 : day="목요일"; break;
+			case 5 : day="금요일"; break;
+			case 6 : day="토요일"; break;
+		}
+		document.write(day+"입니다<br><hr>")
+		
+		
+		for(x=2;x<5;x++) {
+			for(y=1;y<=9;y++){
+				document.write(x+" x "+y+" = "+ (x*y)+"<br>")
+			}
+			document.write("<br>")
+		}
+		document.write("<hr>")
+		
+		
+		var x=1
+		var sum=0
+		while(x<=100) {
+			sum+=x
+			x++
+		}
+		document.write("sum : "+sum)
+	</script>
+
+</body>
+</html>
