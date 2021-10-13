@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js day01 ex04</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		function getReturn() {
+			var kor=999;
+			return kor;
+		}
+		reKor = getReturn()
+		document.write("reKor : " + reKor + "<hr>")
+		
+		
+		function printFC(msg) {
+			document.write(msg);
+		}
+		var m="안녕하세요 :)<hr>"
+		printFC(m);
+		
+		function printFC02(a,b,c,d) {
+			document.write(a +"<hr>")
+			document.write(b==undefined)
+			
+			document.write("arguments size : " + arguments.length)	//매개변수의 개수
+			for(i=0;i<arguments.length;i++) {
+				document.write("<hr>"+arguments[i])
+			}
+		}
+		var m="안녕하세요 :D"
+		printFC02(m,1,2,3);
+		
+	</script>
+	
+</body>
+</html>
