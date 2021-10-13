@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js day01 quiz03</title>
+<style type="text/css">
+	.back{background-color:#F7E3E3; width:300px; height:250px;}
+	img{width:300px; height:200px; }
+	button{background-color:#E5BFBF; border-radius: 10px; padding:2px; 
+		   margin-left:50px; margin-top:8px;}
+</style>
+
+<script type="text/javascript">
+	var x=1;
+	function beforeImg() {
+		if(x==1){
+			x=8;
+		} else {
+			x -= 1;
+		}
+		document.getElementById('img').src="../img/test"+x+".jpg";
+		console.log("이전 : " + x);
+	}
+	
+	function afterImg() {
+		if (x==8) {
+			x=1;
+		} else {
+			x += 1;
+		}
+		document.getElementById('img').src="../img/test"+x+".jpg";
+		console.log("다음 : " + x);
+	}
+	
+
+</script>
+</head>
+<body>
+
+	<div class="back">
+		<img id="img" src="../img/test1.jpg">
+		<button type="button" onclick="beforeImg()">이전 사진</button>
+		<button type="button" onclick="afterImg()">다음 사진</button>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js day01 ex05</title>
+<style type="text/css">
+	#img {width:100px; height:100px;}
+</style>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+		function click1() {	/* click()은 예약어이기 때문에 실행X */
+			var n = document.getElementById('name1').value /*값*/;
+			console.log(n);	//print같은 기능, 인터넷 F12의 Console창에 띄워짐
+			
+			document.getElementById('name1').value=""; /* console창에 넘겨 준 후 reset */
+			document.getElementById('name1').value=n; /* name2 창에 var n값이 넘어감 */
+			
+			var n3 = document.getElementById('name3');
+			/*
+			var msg="<h3>버튼을 클릭하면 바뀐다! innerHTML</h3>";
+			n3.innerHTML=msg;
+			*/
+			
+			var DBData = ['홍길동','김개똥','고도리'];
+			var msg2="<table border='1'>"
+			for(i=0; i<DBData.length;i++) {
+				msg2 += "<tr><th>"+DBData[i]+"</th></tr>"
+			}
+			msg2 += "</table>"
+			n3.innerHTML=msg2;
+		}
+		
+		var bool=true;
+		function setImg() {
+			if(bool) {
+				document.getElementById('img').src="../img/light_on.jpg"
+			} else {
+				document.getElementById('img').src="../img/light_off.jpg"
+			}
+			bool=!bool;
+		}
+	
+	</script>
+	
+	<input type="text" id="name1"><br>
+	<input type="text" id="name2"><br>
+	<div id="name3"> 안녕하세요 </div>
+	<input type="button" value="버튼" onclick="click1()">
+	<hr>
+	<img id="img" src="../img/lion.png"> <br>
+	<button type="button" onclick="setImg()">이미지</button>
+	
+</body>
+</html>
