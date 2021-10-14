@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> js day02 ex04 elements추가</title>
+
+<script type="text/javascript">
+	var img
+	function add() {
+		img = document.createElement("img")	//html 태그를 만드는 명령어
+		img.setAttribute("src","../img/lion.png") // = img.src = "../img/lion.png"
+		//img.setAttribute('class','img2')
+		//img.width = 100						//html
+		//img.style.height="100px"			//css
+		img.id="img"
+		
+		document.getElementById('test').appendChild(img)
+		//document.body/*html의 body태그*/.appendChild(img);
+		//innerHTML : 태그를 다 지우고 새로 바꾸는 것
+		//append : 추가하는 것
+		
+	}
+	function remove() {
+		//document.body.removeChild(img)
+		//document.getElementById('test').removeChild(img)
+		document.getElementById('test').innerHTML='test';
+	}
+</script>
+<style type="text/css">
+	#img {width:100px; height:100px;}
+	.img2{height:140px;}
+</style>
+</head>
+<body>
+	
+	<p id="test"> test </p>
+	<a href="#" onclick="add()">[이미지 추가]</a>
+	<a href="#" onclick="remove()">[이미지 삭제]</a>
+</body>
+</html>
