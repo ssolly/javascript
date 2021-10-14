@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js day02 quiz01 </title>
+
+<style type="text/css">
+	#img{width:400px; height:300px;}
+</style>
+
+<script type="text/javascript">	
+	var x=1;
+	function next() {
+		if(x==1){
+			x=8;
+		} else {
+			x -= 1;
+		}
+		document.getElementById('img').src="../img/test"+x+".jpg";
+		console.log("이전 : " + x);
+	
+		e=setTimeout('next()',1000)	
+	}
+
+	function stop() {
+		clearTimeout(e);
+	}
+</script>
+
+</head>
+<body>
+	<h4> 마우스를 사진에 올려보세요! </h4>
+	<img id="img" src="../img/test1.jpg" onmouseover="next()" onmouseout="stop()">
+	
+</body>
+</html>

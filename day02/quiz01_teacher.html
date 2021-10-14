@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>js day02 quiz01_teacher</title>
+<style>
+#image {
+	display: flex;
+	width: 500px;
+	height: 500px;
+	z-index: 0;
+}
+
+#pic {
+	width: 300px;
+	height: 400px;
+	padding-top: 50px;
+	z-index: -1;
+}
+
+#pic01 {
+	position: relative;
+	top: 200px;
+	width: 100px;
+	height: 100px;
+}
+
+#pic02 {
+	position: relative;
+	top: 200px;
+	width: 100px;
+	height: 100px;
+}
+</style>
+<script>
+	var list = [ "test1", "test2", "test3", "test4", "test5", "test6",
+			"test7", "test8" ];
+	var x = 0;
+	function prev() {
+		if (x == 0)
+			x = list.length - 1;
+		else
+			x = x - 1;
+		document.getElementById("pic").src = "../img/" + list[x]
+				+ ".jpg";
+	}
+	function next() {
+		if (x == list.length - 1)
+			x = 0;
+		else
+			x = x + 1;
+		document.getElementById("pic").src = "../img/" + list[x]
+				+ ".jpg";
+	}
+	var stopVal;
+	var bool = true;
+	function auto() {
+		if (x == list.length - 1)
+			x = 0;
+		else
+			x = x + 1;
+		if (bool) {
+			document.getElementById("pic").src = "../img/"
+					+ list[x] + ".jpg";
+		} else {
+			bool = !bool;
+		}
+		stopval = setTimeout("auto()", 1000)
+	}
+	function stop() {
+		clearTimeout(stopval)
+		bool=false;
+	}
+</script>
+</head>
+<body onload="auto()">
+	<div id="image" onmouseover="stop()" onmouseout="auto()">
+		<img id="pic01" src="../img/왼쪽화살표.jpg" onClick="prev()" />
+		<img src="../img/test1.jpg" id="pic" /> <img id="pic02"
+			src="../img/오른쪽화살표.jpg" onClick="next()" />
+	</div>
+</body>
+</html>
