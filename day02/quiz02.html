@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	img{width:100px; height:100px;}
+	.list{position:fixed; right:30px; top:10px; width:100px;}
+	.list_title{ background:pink;}
+</style>
+
+<script type="text/javascript">
+	var arr=[];
+	const imgSize=5;
+	function display(name) {
+		if(arr.length==0) {
+			list();
+		}
+		arr.push(name);
+		rp2 = document.getElementById("rp2");
+		if(arr.length<=imgSize) {
+			var img = document.createElement('img');
+			img.src="../img/"+name+".jpg";
+			rp2.appendChild(img)
+		} else {
+			rp2.innerHTML="";
+			arr.shift();
+			for(i=0;i<arr.length;i++) {
+				var img = document.createElement('img');
+				img.src="../img/"+arr[i]+".jpg";
+				document.getElementById('rp2').appendChild(img);
+			}
+		}
+	}
+	function list() {
+		ls = document.getElementById("ls")
+		ls.innerHTML = "최근 선택한 사진";
+		ls.style.background = "skyblue";
+	}
+</script>
+</head>
+<body>
+
+	<div class="list">
+		<h3 class="list_title" id="ls" align="center"> 목록이<br>없습니다 </h3>
+		<div id="rp2"></div> <!-- 선택한 사진이 올라갈 공간 --> 
+	</div>
+	<table border="1" align="center">
+		<tr>
+			<td><img onclick="display('test1')" src="../img/test1.jpg"></td>
+			<td><img onclick="display('test2')" src="../img/test2.jpg"></td>
+			<td><img onclick="display('test3')" src="../img/test3.jpg"></td>
+			<td><img onclick="display('test4')" src="../img/test4.jpg"></td>
+		</tr>
+		<tr>
+			<td><img onclick="display('test5')" src="../img/test5.jpg"></td>
+			<td><img onclick="display('test6')" src="../img/test6.jpg"></td>
+			<td><img onclick="display('test7')" src="../img/test7.jpg"></td>
+			<td><img onclick="display('test8')" src="../img/test8.jpg"></td>
+		</tr>
+	</table>
+</body>
+</html>
