@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js day02 ex02 setTimeout(),setInterval()</title>
+</head>
+<body>
+	<h4> setTimeout() </h4>
+	<div id="digClock01"></div>
+	<button type="button" onclick="digClock()">시작</button>
+	<button type="button" onclick="end()">종료</button>
+	
+	<script type="text/javascript">
+		function digClock() {
+			var today = new Date();
+			var day = today.getMonth()+1 + "월" + today.getDate() + "일";
+			var time = today.getHours()+"시"+ today.getMinutes()+"분" + today.getSeconds()+"초";
+			document.getElementById('digClock01').innerHTML = day+time;
+			
+			e=setTimeout('digClock()',1000)	
+			/* 자기 자신을 호출하는 함수, 1000 (1초마다)
+			   만약 다른 함수를 포출 할 시, 한번 만 실행 */
+		}
+		
+		function end() {
+			//document.write("종료")
+			clearTimeout(e);
+		}
+	</script>
+	
+	<hr>
+	<h4> setInterval() </h4>
+	<div id="digClock02"></div>
+	<button type="button" onclick="myStart()">시작</button>
+	<button type="button" onclick="myStop()">종료</button>
+	
+	<script type="text/javascript">
+		var myVar;
+		function myStart() {
+			myVar = setInterval(myTimer,1000)		//딱 한번만 호출, 자기 자신에게 쓰면 문제有
+		}
+		function myTimer() {
+			var d = new Date();
+			document.getElementById('digClock02').innerHTML = d.toLocaleString();
+		}
+		function myStop() {
+			clearInterval(myVar);
+		}
+	</script>
+</body>
+</html>
