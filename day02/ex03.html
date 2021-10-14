@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> js day02 ex03 onload</title>
+
+<script type="text/javascript">
+	function init() {
+		alert('환영합니다');
+	}
+	function over(obj) {
+		obj.style.color="green";
+		document.getElementById('h2').innerHTML='Mouse In!';
+	}
+	function out() {
+		document.getElementById('h2').style.color='black';
+		document.getElementById('h2').innerHTML='Mouse Out!';
+	}
+</script>
+
+</head>
+<body onload="init()">
+	<!-- onload : body에서만 사용 가능, 초기화를 의미 -->
+	<h2 id="h2" onmouseover="over(this)" onmouseout="out()"> Mouse over this text! </h2>
+			<!--  ↑ 마우스가 들어왔을 때 		  ↑ 마우스가 나갔을 때 -->
+</body>
+</html>
