@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ja day03 ex06</title>
+<script type="text/javascript">
+	function lighton() {
+		document.getElementById('myimage').src="../img/light_on.jpg"
+	}
+	function lightoff() {
+		document.getElementById('myimage').src="../img/light_off.jpg"
+	}
+</script>
+</head>
+<body>
+	<div>
+		<!-- onmousedown은 마우스를 클릭하고 있는 순간들, click은 한번 선택하면 끝 -->
+		<img id="myimage" onmousedown="lighton()" onmouseup="lightoff()"
+			 src="../img/light_off.jpg" width="150px" height="180px">
+	</div>
+</body>
+</html>
