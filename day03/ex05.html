@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js day03 html ex05 </title>
+
+<style type="text/css">
+	.wrapper { display: flex; border: 5px solid navy; 
+			   width:900px; height: 600px; margin:auto;}	
+	.light { width:150px; background-color:orange;}
+	.light img {width:120px;}
+	.room {width:750px; background-image:url("../../img/room.jpg")}
+	#dark {width:100%; height:100%; background-color:black; opacity/*투명도*/:0;}
+</style>
+<script type="text/javascript">
+	var flag=true;
+	function turnOff() {
+		var op;
+		var path;
+		flag = !flag;	//항상 반전이 일어남(참->거짓, 거짓->참)
+		if(flag) {	//라이트가 켜져있는 상황
+			op=0;
+			path = "../../img/switch_on.png";
+		} else {	//라이트가 꺼져있는 상황
+			op=0.8;
+			path = "../../img/switch_off.png";
+		}
+		document.getElementById('dark').style.opacity = op;
+		document.getElementById('sw').src = path;
+	}
+</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="light">
+			<img src="../../img/switch_on.png" id="sw" onclick="turnOff()">
+		</div>
+		<div id="test" class="room">
+			<div id="dark"></div>
+		</div>
+	</div>
+</body>
+</html>
