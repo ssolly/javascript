@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> js day03 ex03</title>
+<script type="text/javascript">
+	function myClick() {
+		var result=confirm("탈퇴하시겠습니까?");
+		console.log(result);
+		if(result) {
+			alert("탈퇴 성공")
+		} else {
+			alert("취소를 선택하셨습니다")
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="탈퇴하기" onclick="myClick()"><br>
+	<p id="myclick"></p>
+</body>
+</html>
