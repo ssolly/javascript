@@ -3,8 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>js day03 ex01</title>
+
+<script type="text/javascript">
+	function myFocus() {
+		document.getElementById('pw').focus();
+	}
+	function pwdchk() {
+		inPut=document.getElementById('inPut').value;
+		document.getElementById('outPut').value = inPut;
+		document.getElementById("inPut").value="";
+	}
+</script>
 </head>
 <body>
-
+	아이디 &ensp; <input type="text"><br>
+	비밀번호 <input type="password" id="pw"><br>
+	<input type="button" value="로그인" onclick="myFocus()">
+	<hr>
+	
+	<input type="text" id="inPut" onchange="pwdchk()"><br>
+	<input type="text" id="outPut"><br>
 </body>
 </html>
